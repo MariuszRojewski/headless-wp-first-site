@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import PageIcon from "../../images/page-icon.svg";
 import { Wrapper, Menu } from "./ArchiveSidebar.styles";
 
-function ArchiveSidebar({ catId, categories }) {
+function ArchiveSidebar({ categories }) {
   console.log("CAT ID: ", categories);
   const sorttedCategories = [...categories].sort((x, y) => {
     if (x.node.slug === "all-posts") return -1;
@@ -20,7 +20,8 @@ function ArchiveSidebar({ catId, categories }) {
         </li>
         {sorttedCategories.map((category) => {
           if (category.node.count !== 0) {
-            return category.node.slug !== "uncategorized" ? (
+            return category.node.slug !== "uncategorized" &&
+              category.node.count > 0 ? (
               <li key={category.node.id}>
                 <span className="count">{category.node.count}</span>
                 <Link

@@ -16,23 +16,37 @@ export const Menu = styled.ul`
 
   .sidebar-section {
     font-family: "Teko", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #000;
     border-bottom: 2px #e4e4e4 solid;
     font-weight: 400;
     letter-spacing: 1px;
-    margin: 0 0 30px 0;
+    margin: 0 0 20px 0;
     padding: 0 0 5px 0;
+
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+    img {
+      max-height: 24px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
   }
 
-  li {
-    margin: 0 0 5px 0px;
-    color: #000;
-    font-family: "Teko", Arial;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 1px;
+  ul {
+    li {
+      margin: 0 0 5px 0px;
+      color: #000;
+      font-family: "Teko", Arial;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 1px;
 
-    a:hover {
-      color: #d22e26;
+      a:hover {
+        color: #d22e26;
+      }
     }
   }
 

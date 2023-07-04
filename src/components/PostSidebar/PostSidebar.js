@@ -2,30 +2,37 @@ import React from "react";
 import { Link } from "gatsby";
 import { Wrapper, Menu } from "./PostSidebar.styles";
 
+import CategoryIcon from "../../images/category-svgrepo-com.svg";
+import DateIcon from "../../images/date-svgrepo-com.svg";
+import UserIcon from "../../images/user-5-svgrepo-com.svg";
+
 function PostSidebar({ date, author, categories }) {
   return (
     <Wrapper>
       <Menu>
-        <li className="sidebar-section">
+        <div className="sidebar-section">
+          <img src={UserIcon} alt="" />
           <span>Author: {author}</span>
-        </li>
-        <li className="sidebar-section">
+        </div>
+        <div className="sidebar-section">
+          <img src={DateIcon} alt="" />
           <span>Date: {date}</span>
-        </li>
-        <li className="sidebar-section">
+        </div>
+        <div className="sidebar-section">
+          <img src={CategoryIcon} alt="" />
           <span>Categories</span>
-          <ul>
-            {categories.map((category) => {
-              return category.slug !== "all-post" ? (
-                <li key={category.id}>
-                  <Link to={category.uri}>
-                    <span dangerouslySetInnerHTML={{ __html: category.name }} />
-                  </Link>
-                </li>
-              ) : null;
-            })}
-          </ul>
-        </li>
+        </div>
+        <ul>
+          {categories.map((category) => {
+            return category.slug !== "all-post" ? (
+              <li key={category.id}>
+                <Link to={category.uri}>
+                  <span dangerouslySetInnerHTML={{ __html: category.name }} />
+                </Link>
+              </li>
+            ) : null;
+          })}
+        </ul>
       </Menu>
     </Wrapper>
   );
