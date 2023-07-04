@@ -5,9 +5,6 @@ import PageIcon from "../../images/page-icon.svg";
 import { Wrapper, Menu } from "./PageSidebar.styles";
 
 function PageSidebar({ sidebar }) {
-  console.log("sidebar: ", sidebar);
-  console.log(sidebar.wpPage.wpChildren.nodes.length);
-
   const firstParentId = sidebar.wpPage.parentId === null && sidebar.wpPage.id;
   const pageData = sidebar.wpPage.parentId
     ? sidebar.allWpPage.nodes.find(
@@ -15,15 +12,18 @@ function PageSidebar({ sidebar }) {
       )
     : null;
 
-  function sidebarNavigation() {
-    // Sprawdzamy, czy to ejst pierwszy elelment nawigacji (kategoria rodzic)
-    // jeśli tak, to nie robimy zaznaczenia w submenu, jeśli nie to dodajemy
-    // klasę w dzieciach o nazwie "sidebar-highlighted"
+  console.log("firstParentId: ", firstParentId);
+  console.log("pageData: ", pageData);
 
+  function sidebarNavigation() {
     if (firstParentId) {
       const firstParentNodes = sidebar.allWpPage.nodes.find(
         (node) => node.id === firstParentId
       );
+
+      const firstParentNodesSort = [
+        ...firstParentNodes.wpChildren.nodes,
+      ].reverse();
 
       return (
         <>
@@ -33,8 +33,7 @@ function PageSidebar({ sidebar }) {
               dangerouslySetInnerHTML={{ __html: firstParentNodes.title }}
             />
           </li>
-          {firstParentNodes.wpChildren.nodes.map((child) => {
-            console.log(child);
+          {firstParentNodesSort.map((child) => {
             return (
               <li key={child.id}>
                 <Link to={child.uri}>
@@ -46,14 +45,14 @@ function PageSidebar({ sidebar }) {
         </>
       );
     } else {
+      const pageDataSort = [...pageData.wpChildren.nodes].reverse();
       return (
         <>
           <li className="sidebar-menu-header">
             <img src={PageIcon} alt="CakeIt Page" />
             <span dangerouslySetInnerHTML={{ __html: pageData.title }} />
           </li>
-          {pageData.wpChildren.nodes.map((child) => {
-            console.log(child);
+          {pageDataSort.map((child) => {
             return (
               <li key={child.id}>
                 <Link to={child.uri} activeClassName="sidebar-highlighted">
