@@ -7,15 +7,24 @@ const SidebarMessage = () => (
   <Wrapper>
     <div>
       <img src={tangoMail} alt="cakeit-mail" />
-      <span>Mail list</span>
+      <span>Kontakt</span>
     </div>
     <p>
-      Do you want to get updated when we publish new stuff?
+      Tłumacz Online
       <br />
-      Just email us with your name and email adress
+      Polskiego Języka Migowego
       <br />
       <br />
-      <a href="mailto:info@cakeitfakeit.com">Email</a>
+      <a href="mailto:kontakt@emigowy.pl">Email: kontakt@emigowy.pl</a>
+      <p>Tel.: +48 785 976 866</p>
+      <p>
+        Adres: ul. Spółdzielców 19B, <br />
+        62-510 Konin
+      </p>
+      <p>
+        Godziny pracy: <br />
+        Pn-Pt 10:00-16:00
+      </p>
     </p>
   </Wrapper>
 );

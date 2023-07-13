@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavigationWrapper = styled.nav`
-  font-family: 'Teko', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   color: #212121;
   font-size: 1rem;
@@ -10,7 +9,7 @@ export const NavigationWrapper = styled.nav`
   display: none;
 
   .nav-active {
-    color: #ee2562;
+    color: #2967db;
   }
 
   @media (min-width: 992px) {
@@ -26,8 +25,10 @@ export const NavigationWrapper = styled.nav`
     display: block;
     margin: 0 10px 0 0;
     float: left;
-    height: 30px;
+    line-height: 20px;
     position: relative;
+    font-weight: 700;
+    letter-spacing: 1px;
 
     a {
       display: flex;
@@ -51,25 +52,31 @@ export const NavigationWrapper = styled.nav`
   }
 
   ul li a:hover {
-    color: #ee2562;
+    color: #2967db;
   }
 
   ul ul {
     animation: fadeInMenu 0.3s both ease-in;
     display: none;
     position: absolute;
-    left: 0;
+    right: 0;
     margin: 0;
-    top: 30px;
+    top: 20px;
     text-transform: none;
     background: #fff;
-    padding: 15px 10px 10px 10px;
+    padding: 15px 10px;
     box-shadow: 0px 6px 23px -10px rgba(0, 0, 0, 0.5);
+
+    @media (min-width: 1420px) {
+      left: 0;
+      right: unset;
+    }
   }
 
   ul ul li {
     width: auto;
     min-width: 170px;
+    margin: 5px 0;
   }
 
   ul ul li a {

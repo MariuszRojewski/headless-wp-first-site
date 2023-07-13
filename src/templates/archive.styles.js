@@ -1,11 +1,11 @@
-import styled from "styled-components"
-import { Link } from "gatsby"
+import styled from "styled-components";
+import { Link } from "gatsby";
 
 export const Wrapper = styled.div`
   max-width: 1180px;
   margin: 0 auto;
   padding: 20px;
-`
+`;
 
 export const ContentWrapper = styled.div`
   display: block;
@@ -13,7 +13,7 @@ export const ContentWrapper = styled.div`
   @media (min-width: 992px) {
     display: flex;
   }
-`
+`;
 
 export const PageContent = styled.article`
   margin: 20px 0 0 0;
@@ -24,7 +24,7 @@ export const PageContent = styled.article`
     margin-bottom: 20px;
     border-bottom: 1px solid lightgrey;
   }
-`
+`;
 
 export const StyledH2 = styled.h2`
   font-weight: 500;
@@ -32,13 +32,13 @@ export const StyledH2 = styled.h2`
   :hover {
     color: #ee2562;
   }
-`
+`;
 
 export const StyledDate = styled.div`
   font-family: "Teko";
   font-size: 1.1rem;
   font-weight: 600;
-`
+`;
 
 export const StyledReadMore = styled(Link)`
   font-family: "Teko", Arial, Helvetica, sans-serif;
@@ -74,4 +74,4 @@ export const StyledReadMore = styled(Link)`
   :hover:after {
     border-left-color: #ee2562;
   }
-`
+`;

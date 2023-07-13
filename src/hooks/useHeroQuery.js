@@ -7,6 +7,18 @@ function useHeroQuery() {
         id
         ACF_HomePage {
           heroText
+          heroSubText
+          heroButonDestination {
+            ... on WpPage {
+              id
+              uri
+            }
+            ... on WpPost {
+              id
+              uri
+            }
+          }
+
           heroImage {
             localFile {
               childImageSharp {

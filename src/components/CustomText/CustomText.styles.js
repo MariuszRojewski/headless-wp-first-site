@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: #4d4d4d;
+  background: rgb(245, 247, 255);
   text-align: center;
-  padding: 40px 0;
+  padding: 30px;
   color: #fff;
 
   img {
@@ -14,15 +14,22 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  max-width: 1080px;
+  max-width: 1140px;
   margin: 0 auto;
 
-  h6 {
+  p {
     font-size: 1rem;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px 0;
+    color: rgb(46, 35, 70);
   }
 
   @media screen and (min-width: 768px) {
-    h6 {
+    padding: 40px 0;
+    text-align: justify;
+
+    p {
       font-size: 1.5rem;
     }
   }

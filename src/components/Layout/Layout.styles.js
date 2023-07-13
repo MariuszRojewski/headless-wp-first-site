@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from "styled-components";
 
 export const Primary = styled.main`
   padding: 110px 0 0 0;
@@ -7,7 +7,7 @@ export const Primary = styled.main`
 export const GlobalStyles = createGlobalStyle`
 {
   html {
-    font-family: 'arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
@@ -75,7 +75,7 @@ export const GlobalStyles = createGlobalStyle`
     font-style: italic;
   }
   h1 {
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 2em;
     margin: 0.67em 0;
@@ -201,7 +201,7 @@ export const GlobalStyles = createGlobalStyle`
     font: inherit;
   }
   html {
-    font: 112.5%/1.45em arial, georgia, serif;
+    font: 112.5%/1.45em 'Open Sans', georgia, serif;
     box-sizing: border-box;
     overflow-y: scroll;
   }
@@ -216,7 +216,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   body {
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: 'arial', georgia, serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;
@@ -243,14 +243,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.1rem;
     line-height: 1.7rem;
   }
 
   h1 {
     font-size: 2.2rem;
-    font-family: 'Teko', Arial;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     letter-spacing: 1px;
     color: #282828;
@@ -268,7 +268,7 @@ export const GlobalStyles = createGlobalStyle`
     padding-top: 0;
     margin-bottom: 1.45rem;
     color: inherit;
-    font-family: 'Teko', Arial, Helvetica Neue, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-rendering: optimizeLegibility;
     font-size: 1.62671rem;
@@ -292,13 +292,13 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.1;
   }
   h4 {
-    font-family: Arial;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     font-size: 1.2rem;
     letter-spacing: 1px;
   }
   h5 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-variant: normal;
@@ -309,10 +309,9 @@ export const GlobalStyles = createGlobalStyle`
     text-transform: uppercase;
   }
   h6 {
-    font-family: 'Times New Roman';
+    font-family: 'Open Sans', sans-serif;
     font-size: 28px;
     color: #fff;
-    font-style: italic;
     margin: 40px 20% 20px 20%;
     line-height: 35px;
   }

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.header`
   background: #fdf3fa;
@@ -19,8 +19,7 @@ export const Content = styled.div`
   padding: 0 20px;
 
   img {
-    width: 200px;
+    width: 250px;
     margin: 0;
-    padding: 12px 0 0 0;
   }
 `;

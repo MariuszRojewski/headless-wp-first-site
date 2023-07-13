@@ -12,6 +12,7 @@ export const CTAImage = styled.div`
   max-height: 100px;
   position: relative;
   overflow: hidden;
+  border-radius: 15px;
 
   :hover img {
     transform: scale(1.1);
@@ -34,10 +35,10 @@ export const CTAImageTextWrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: rgba(32, 25, 81, 0.35);
 `;
 
 export const CTAImageText = styled.p`
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-weight: 800;
   letter-spacing: 0px;
   font-size: 1.7rem;

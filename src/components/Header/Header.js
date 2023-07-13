@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import Navigation from "../Navigation/Navigation";
 import useMenuQuery from "../../hooks/useMenuQuery";
 
-import Logo from "../../images/logo.svg";
+import Logo from "../../images/logo-emigowy.png";
 import { Wrapper, Content } from "./Header.styles";
 
 function Header() {

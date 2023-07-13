@@ -13,5 +13,10 @@ export const FooterWrapper = styled.footer`
   p {
     margin: 0;
     padding: 0;
+    font-size: 0.9rem;
+
+    span {
+      font-size: 0.7rem;
+    }
   }
 `;

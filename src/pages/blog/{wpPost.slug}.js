@@ -6,6 +6,8 @@ import Layout from "../../components/Layout/Layout";
 import BreadCrumb from "../../components/BreadCrumb/BreadCrumb";
 import PostSidebar from "../../components/PostSidebar/PostSidebar";
 
+import { Seo } from "../../components/Seo/Seo";
+
 const Wrapper = styled.div`
   max-width: 1180px;
   margin: 0 auto;
@@ -53,6 +55,10 @@ export const pageQuery = graphql`
     post: wpPost(id: { eq: $id }) {
       title
       content
+      seo {
+        title
+        metaDesc
+      }
       author {
         node {
           name
@@ -70,3 +76,11 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export const Head = ({
+  data: {
+    post: { seo: metaData },
+  },
+}) => {
+  return <Seo title={metaData.title} description={metaData.metaDesc} />;
+};

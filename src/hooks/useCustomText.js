@@ -1,12 +1,11 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-function useQuoteQuery() {
+function useCustomText() {
   const data = useStaticQuery(graphql`
-    query myQuoteQuery {
+    query myCustomTextQuery {
       wpPage(databaseId: { eq: 47 }, ACF_HomePage: {}) {
         ACF_HomePage {
-          citat1Text
-          citat1Author
+          customTextArea
         }
       }
     }
@@ -14,4 +13,4 @@ function useQuoteQuery() {
   return data;
 }
 
-export default useQuoteQuery;
+export default useCustomText;

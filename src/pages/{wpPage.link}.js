@@ -7,6 +7,8 @@ import BreadCrumb from "../components/BreadCrumb/BreadCrumb";
 import PageHero from "../components/PageHero/PageHero";
 import PageSidebar from "../components/PageSidebar/PageSidebar";
 
+import { Seo } from "../components/Seo/Seo";
+
 const Wrapper = styled.div`
   max-width: 1180px;
   margin: 0 auto;
@@ -72,8 +74,13 @@ export const pageQuery = graphql`
       parentId
       title
       uri
+      slug
       content
       status
+      seo {
+        title
+        metaDesc
+      }
       featuredImage {
         node {
           id
@@ -96,3 +103,11 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export const Head = ({
+  data: {
+    wpPage: { seo: metaData },
+  },
+}) => {
+  return <Seo title={metaData.title} description={metaData.metaDesc} />;
+};

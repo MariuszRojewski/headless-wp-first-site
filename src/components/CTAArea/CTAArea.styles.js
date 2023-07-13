@@ -6,7 +6,7 @@ export const WrapperAbc = styled.div`
   grid-gap: 20px;
   max-width: 1180px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto 30px auto;
   padding: 0 20px;
 
   @media screen and (min-width: 768px) {
