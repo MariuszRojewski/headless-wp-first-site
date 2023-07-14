@@ -7,9 +7,9 @@ require("dotenv").config({
  */
 module.exports = {
   siteMetadata: {
-    title: `cakeit website`,
-    description: "abc",
-    siteUrl: `http://cakeit2.local/`,
+    title: `Emigowy.pl - Język migowy dla Kultury i Oświaty`,
+    description: "Język migowy dla Kultury i Oświaty",
+    siteUrl: `http://gatsby.hosting-sdo.pl/`,
   },
   plugins: [
     {
