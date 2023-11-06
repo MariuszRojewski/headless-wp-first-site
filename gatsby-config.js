@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: `Emigowy.pl - Język migowy dla Kultury i Oświaty`,
     description: "Język migowy dla Kultury i Oświaty",
-    siteUrl: `http://gatsby.hosting-sdo.pl/`,
+    siteUrl: `http://emigowy.pl/`,
   },
   plugins: [
     {
