@@ -1,0 +1,18 @@
+// styles.scss
+$wrapper-background: #fff;
+
+.header-wrapper {
+  background: $wrapper-background;
+  height: 120px;
+  width: 100%;
+  z-index: 1000;
+
+  .container {
+    height: 100%;
+
+    img {
+      width: 250px;
+      margin: 0;
+    }
+  }
+}

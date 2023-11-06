@@ -27,7 +27,6 @@ const PostContent = styled.article`
 `;
 
 function PostTemplate({ data }) {
-  console.log("POST DATA: ", data);
   return (
     <Layout>
       <Wrapper>

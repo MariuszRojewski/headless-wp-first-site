@@ -1,0 +1,46 @@
+.custom-text-block {
+  background: rgb(245, 247, 255);
+  text-align: center;
+  padding: 70px 0px;
+  color: #fff;
+
+  .container {
+    margin: 0 auto;
+    padding: 0 20px !important;
+
+    .header {
+      color: black;
+      margin: 0;
+      position: relative; /* Ustawiamy pozycję na relative, aby pseudo-element ::after był pozycjonowany względem tego elementu */
+
+      &::after {
+        content: ""; /* Dodajemy pustą zawartość */
+        position: absolute; /* Ustawiamy pozycję na absolute, aby element był pozycjonowany absolutnie względem .header */
+        top: 0;
+        right: -40px; /* Możesz dostosować wartość, aby zmienić odległość od prawej krawędzi */
+        bottom: 0;
+        width: 4px; /* Szerokość pionowej kreski */
+        background: black; /* Kolor pionowej kreski */
+      }
+    }
+
+    .text {
+      padding-left: 80px;
+      font-size: 1.1em;
+      line-height: 1.4em;
+      text-align: justify;
+      font-weight: 300;
+      margin: 10px 0;
+      color: rgb(46, 35, 70);
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 40px 0;
+      text-align: justify;
+
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

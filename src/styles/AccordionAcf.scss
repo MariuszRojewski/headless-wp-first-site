@@ -1,0 +1,56 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+
+    &-header {
+        letter-spacing: 2px;
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &-item {
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #eee;
+            border-radius: 15px;
+            border: 1px solid #b4b4b4;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+
+            .title {
+                margin: 0;
+                font-size: 1.4em;
+                font-weight: normal;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+                fill: #333;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .text {
+            animation: fadeIn 1s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            margin-left: 20px;
+            font-size: 1em;
+
+            @keyframes fadeIn {
+                to {
+                  opacity: 1;
+                }
+              }
+        }
+    }
+}
+

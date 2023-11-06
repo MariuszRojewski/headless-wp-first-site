@@ -15,17 +15,28 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@webdeveducation/wp-block-tools": "^1.1.21",
     "babel-plugin-styled-components": "^2.1.3",
     "gatsby": "^5.11.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^3.11.0",
+    "gatsby-plugin-postcss": "^6.12.0",
+    "gatsby-plugin-sass": "^6.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-styled-components": "^6.11.0",
+    "gatsby-remark-responsive-iframe": "^6.12.0",
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-source-wordpress": "^7.11.0",
     "gatsby-transformer-sharp": "^5.11.0",
+    "nanoid": "^4.0.2",
+    "postcss": "^8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-slick": "^0.29.0",
+    "sass": "^1.66.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.11"
   },
   "repository": {

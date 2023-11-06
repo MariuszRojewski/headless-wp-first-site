@@ -1,16 +1,14 @@
 import React from "react";
 import useCTAAreaQuery from "../../hooks/useCTAAreaQuery";
-import { WrapperAbc } from "./CTAArea.styles";
-import CTA from "../CTA/CTA";
+import "./style.scss"; // Importowanie pliku SCSS
+import CallToAction from "../CallToAction/callToAction";
 
 function CTAArea() {
   const { cta } = useCTAAreaQuery();
-  console.log("CTA: ", cta);
 
-  const ctaArray = new Array(3)
-    .fill("")
-    .map((el, i) => (
-      <CTA
+  const ctaArray = new Array(3).fill("").map((el, i) => {
+    return (
+      <CallToAction
         key={i}
         image={
           cta.ACF_HomePage[`cta${i + 1}Image`].localFile.childImageSharp
@@ -19,9 +17,16 @@ function CTAArea() {
         link={cta.ACF_HomePage[`cta${i + 1}Link`]}
         text={cta.ACF_HomePage[`cta${i + 1}Text`]}
       />
-    ));
+    );
+  });
 
-  return <WrapperAbc>{ctaArray}</WrapperAbc>;
+  return (
+    <div className="homepage-cta-block">
+      <div className="container">
+        <div className="cta-area">{ctaArray}</div>
+      </div>
+    </div>
+  );
 }
 
 export default CTAArea;

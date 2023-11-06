@@ -5,19 +5,14 @@ import PageIcon from "../../images/page-icon.svg";
 import { Wrapper, Menu } from "./PageSidebar.styles";
 
 function PageSidebar({ sidebar }) {
-  const firstParentId = sidebar.wpPage.parentId === null && sidebar.wpPage.id;
-  const pageData = sidebar.wpPage.parentId
-    ? sidebar.allWpPage.nodes.find(
-        (node) => node.id === sidebar.wpPage.parentId
-      )
+  const firstParentId = sidebar.parentId === null && sidebar.id;
+  const pageData = sidebar.parentId
+    ? sidebar.allPages.find((node) => node.id === sidebar.parentId)
     : null;
-
-  console.log("firstParentId: ", firstParentId);
-  console.log("pageData: ", pageData);
 
   function sidebarNavigation() {
     if (firstParentId) {
-      const firstParentNodes = sidebar.allWpPage.nodes.find(
+      const firstParentNodes = sidebar.allPages.find(
         (node) => node.id === firstParentId
       );
 
@@ -69,8 +64,7 @@ function PageSidebar({ sidebar }) {
   return (
     <Wrapper>
       <Menu>
-        {sidebar.wpPage.parentId === null &&
-        sidebar.wpPage.wpChildren.nodes.length === 0 ? (
+        {sidebar.parentId === null && sidebar.wpChildren.nodes.length === 0 ? (
           <SidebarMessage />
         ) : (
           sidebarNavigation()

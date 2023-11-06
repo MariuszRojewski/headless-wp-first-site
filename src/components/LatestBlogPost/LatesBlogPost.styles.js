@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 
   max-width: 1180px;
   margin: 40px auto 40px auto;
-  padding: 30px 0;
+  padding: 30px 20px;
   border-top: 1px solid #ddd;
   text-align: center;
 
@@ -42,7 +42,6 @@ export const LatestRealisation = styled.div`
 
 export const Header = styled.h2`
   font-size: 2.4rem;
-  font-family: "Open Sans", sans-serif;
   font-weight: 800;
   text-align: center;
   letter-spacing: 1px;

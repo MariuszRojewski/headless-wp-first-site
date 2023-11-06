@@ -1,0 +1,5 @@
+1. Komponent MainMenu:
+Użycie <Link/> w tym miejscu powoduje migotanie nawigacji
+W przyszłosci możesz się z tym pobawiac, jak będzie czas
+na teraz jakoś chodzi. Linik nie zadziała tylko dla kategorii
+cała reszta działa poprawnie.

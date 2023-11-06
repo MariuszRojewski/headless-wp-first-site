@@ -6,9 +6,6 @@ import useMenuQuery from "../../hooks/useMenuQuery";
 import { OverlayWrapper } from "./OverlayMenu.styles";
 
 function OverlayMenu({ menuOpen, callback }) {
-  console.log("menuOpen: ", menuOpen);
-  console.log("callBack: ", callback);
-
   const { menu } = useMenuQuery();
   return (
     <OverlayWrapper menuOpen={menuOpen}>

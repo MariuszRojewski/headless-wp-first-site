@@ -14,8 +14,9 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px !important;
 
   p {
     font-size: 1rem;

@@ -4,7 +4,7 @@ export const WrapperAbc = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 auto;
   margin: 20px auto 30px auto;
   padding: 0 20px;

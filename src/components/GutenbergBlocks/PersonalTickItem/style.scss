@@ -1,0 +1,20 @@
+.tick-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  margin-bottom: 15px;
+
+  .icon {
+    font-size: 40px;
+    color: rgb(3, 88, 3);
+    margin-right: 15px;
+  }
+  .text {
+    width: max-content;
+
+    p {
+      margin: 0;
+    }
+  }
+}

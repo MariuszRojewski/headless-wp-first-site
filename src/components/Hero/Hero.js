@@ -7,9 +7,13 @@ import { Link } from "gatsby";
 function Hero() {
   const {
     wpPage: { ACF_HomePage: data },
+    site,
   } = useHeroQuery();
 
+  console.log("SITE IS HERE! ", site.siteMetadata.title);
+
   const imageData = getImage(data.heroImage.localFile);
+  console.log("THE HERO IMAGE DATA: ", imageData);
   const heroText = data.heroText;
   const heroSubText = data.heroSubText;
   const heroButonDestination = data.heroButonDestination.uri;

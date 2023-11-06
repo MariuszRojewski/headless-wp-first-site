@@ -1,0 +1,16 @@
+.homepage-cta-block {
+  .container {
+    .cta-area {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0px auto 30px auto;
+      height: auto;
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+}

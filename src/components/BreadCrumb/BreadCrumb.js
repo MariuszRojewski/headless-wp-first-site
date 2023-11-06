@@ -3,8 +3,6 @@ import { Link } from "gatsby";
 import { Wrapper } from "./BreadCrumb.styles";
 
 function BreadCrumb({ crumb, forcedCrumb }) {
-  console.log("CRUMB: ", crumb, forcedCrumb);
-
   if (forcedCrumb !== undefined) {
     return (
       <Wrapper>
@@ -18,8 +16,8 @@ function BreadCrumb({ crumb, forcedCrumb }) {
       </Wrapper>
     );
   } else {
-    const parentPageData = crumb.wpPage.parentId
-      ? crumb.allWpPage.nodes.find((node) => node.id === crumb.wpPage.parentId)
+    const parentPageData = crumb.parentId
+      ? crumb.allPages.find((node) => node.id === crumb.parentId)
       : null;
 
     // Breadcrumbsy przygotowane dla Page z Categorią

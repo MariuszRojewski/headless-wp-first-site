@@ -1,0 +1,98 @@
+// style.scss
+
+footer {
+  color: #fff;
+  background-color: #333;
+
+  .container {
+    padding: 50px 0;
+  }
+
+  .content {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+
+    p {
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 300;
+      margin: 10px 0;
+      color: rgb(46, 35, 70);
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 40px 0;
+      text-align: justify;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .site-info {
+    .dev-link {
+      display: block;
+      margin-top: 5px;
+    }
+  }
+
+  .single-col {
+    text-align: left;
+    max-width: 300px;
+
+    .title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .text {
+      font-size: 0.9rem;
+      color: #ccc;
+      line-height: 1.4;
+      text-align: left;
+
+      a {
+        color: white;
+        font-weight: 500;
+      }
+
+      @media (max-width: 768px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .links {
+      list-style: none;
+      font-size: 0.9rem;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 5px;
+        a {
+          text-decoration: none;
+          color: #ccc;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dodatkowe style dla elementu "footer" lub "body" w zależności od potrzeb.
+// Możesz dostosować tło, marginesy lub inne właściwości.
+
+@media (max-width: 768px) {
+  footer {
+    grid-template-columns: 1fr;
+  }
+}

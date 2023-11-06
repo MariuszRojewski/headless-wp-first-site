@@ -1,0 +1,100 @@
+.cooworkers {
+  margin-bottom: 80px;
+  width: 100%;
+
+  .heading {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .slick-prev {
+    left: -4%;
+    top: 40%;
+
+    @media (max-width: 1200px) {
+      left: -2%;
+    }
+
+    @media (max-width: 1023px) {
+      left: -3%;
+    }
+
+    @media (max-width: 767px) {
+      left: -5%;
+    }
+
+    @media (max-width: 479px) {
+      left: -6%;
+    }
+  }
+
+  .slick-next {
+    right: -2.5%;
+    top: 40%;
+
+    @media (max-width: 1200px) {
+      right: 0;
+    }
+
+    @media (max-width: 1023px) {
+      right: 0;
+    }
+
+    @media (max-width: 767px) {
+      right: 0;
+    }
+
+    @media (max-width: 479px) {
+      right: 0;
+    }
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    font-family: "slick";
+    font-size: 40px;
+    line-height: 1;
+    opacity: 0.75;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 100;
+
+    @media (max-width: 1023px) {
+      /* Style dla urządzeń o szerokości mniejszej niż 1024px */
+    }
+
+    @media (max-width: 767px) {
+      /* Style dla urządzeń o szerokości mniejszej niż 768px */
+    }
+
+    @media (max-width: 479px) {
+      /* Style dla urządzeń o szerokości mniejszej niż 480px */
+    }
+  }
+
+  .slide {
+    width: 100% !important;
+    height: 100px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    a {
+      width: 100%;
+
+      .lazy-load-image-background {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .image {
+      margin: 0px;
+      padding: 0 10%;
+      object-fit: contain;
+      height: 100px;
+      width: 100%;
+    }
+  }
+}

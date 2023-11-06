@@ -13,6 +13,7 @@ export const CTAImage = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 15px;
+  width: 100%;
 
   :hover img {
     transform: scale(1.1);
@@ -20,7 +21,7 @@ export const CTAImage = styled.div`
   }
 
   @media (min-width: 768px) {
-    max-height: 200px;
+    max-height: 150px;
   }
 `;
 
@@ -39,22 +40,19 @@ export const CTAImageTextWrapper = styled.div`
 `;
 
 export const CTAImageText = styled.p`
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0px;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
   margin: 0px;
   padding: 0px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     font-size: 1rem;
   }
 
-  @media (min-width: 992px) {
-    font-size: 1.3rem;
-  }
-
   @media (min-width: 1200px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;

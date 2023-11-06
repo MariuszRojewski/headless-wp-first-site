@@ -25,6 +25,8 @@ function LatestBlogPost() {
   `);
 
   const latestRealisation = data.allWpPost.edges.slice(0, 4).map((latest) => {
+    const href = latest.node.uri ? `/blog${latest.node.uri}` : "#";
+
     const image = latest.node.featuredImage
       ? latest.node.featuredImage.node.gatsbyImage
       : placeholderImageData.file.childImageSharp.gatsbyImageData;
@@ -38,8 +40,8 @@ function LatestBlogPost() {
       .join(" ")}...</p>`;
 
     return (
-      <Link className="CardWrapper" to={`/blog${latest.node.uri}`}>
-        <LatestRealisation key={latest.id}>
+      <Link className="CardWrapper" to={href} key={latest.node.id}>
+        <LatestRealisation>
           <StyledGatsbyImage image={createImage} alt={imageAltText} />
           <Card>
             <CardHeader>{latest.node.title}</CardHeader>

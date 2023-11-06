@@ -1,0 +1,25 @@
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.cta-button {
+  background-color: rgb(219, 189, 18);
+  color: black;
+  padding: 5px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  &:hover {
+    background-color: rgb(255, 223, 42);
+  }
+}

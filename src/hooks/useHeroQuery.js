@@ -3,6 +3,12 @@ import { graphql, useStaticQuery } from "gatsby";
 function useHeroQuery() {
   const data = useStaticQuery(graphql`
     query HeroQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+
       wpPage(databaseId: { eq: 47 }) {
         id
         ACF_HomePage {

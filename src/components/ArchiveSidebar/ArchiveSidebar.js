@@ -15,7 +15,7 @@ function ArchiveSidebar({ categories }) {
     <Wrapper>
       <Menu>
         <li className="sidebar-menu-header">
-          <img src={PageIcon} />
+          <img src={PageIcon} alt="" />
           <span>Posts</span>
         </li>
         {sorttedCategories.map((category) => {

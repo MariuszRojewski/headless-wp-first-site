@@ -1,0 +1,25 @@
+.homepage-blocks {
+  margin: 50px 0;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  hr {
+    width: 200px;
+    height: 2px;
+  }
+
+  .gatsby-image-wrapper {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .wp-site-blocks {
+    padding: 0;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+}
