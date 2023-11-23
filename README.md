@@ -50,3 +50,4 @@ Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 # headless-wp-first-site
 # emigowy.pl
 # emigowy.pl
+# emigowy
