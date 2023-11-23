@@ -6,6 +6,7 @@ import Layout from "../components/Layout/Layout";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb";
 import ArchiveSidebar from "../components/ArchiveSidebar/ArchiveSidebar";
 import Pagination from "../components/Pagination/Pagination";
+import Slogans from "../components/Slogans/Slogans";
 
 import {
   Wrapper,
@@ -14,6 +15,7 @@ import {
   StyledH2,
   StyledDate,
   StyledReadMore,
+  BannerWrapper,
 } from "./archive.styles";
 
 function archiveTempalte({
@@ -23,13 +25,22 @@ function archiveTempalte({
   return (
     <div>
       <Layout>
-        <StaticImage
-          src="../images/archive_headerImage.png"
-          placeholder="TRACED_SVG"
-          width={1920}
-          height={300}
-          alt="archive Hero"
-        />
+        <BannerWrapper>
+          <StaticImage
+            src="../images/archive_headerImage.png"
+            className="styled-image"
+            placeholder="TRACED_SVG"
+            width={1920}
+            height={300}
+            alt="archive Hero"
+          />
+          <div className="banner-shadow">
+            <div className="container">
+              <Slogans />
+            </div>
+          </div>
+        </BannerWrapper>
+
         <Wrapper>
           <BreadCrumb forcedCrumb={{ uri: "/blog/all-posts", title: "Blog" }} />
           <ContentWrapper>

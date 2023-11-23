@@ -11,15 +11,26 @@
 }
 
 .cta-button {
-  background-color: rgb(219, 189, 18);
-  color: black;
-  padding: 5px 15px;
-  border-radius: 5px;
+  background-image: linear-gradient(
+    90deg,
+    rgb(34, 29, 206) 0%,
+    rgb(19, 16, 138) 100%
+  );
+  text-decoration: none;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 15px;
   display: inline-block;
-  font-weight: bold;
+  font-weight: 500;
+  margin-top: 30px;
   letter-spacing: 1px;
+  font-size: 15px;
 
   &:hover {
-    background-color: rgb(255, 223, 42);
+    background-image: linear-gradient(
+      90deg,
+      rgb(19, 16, 138) 0%,
+      rgb(19, 16, 138) 100%
+    );
   }
 }

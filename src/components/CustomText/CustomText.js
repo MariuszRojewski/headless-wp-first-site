@@ -8,13 +8,15 @@ function Quote() {
   return (
     <div className="custom-text-block">
       <div className="container">
-        <h2 className="header">Kim jesteśmy?</h2>
-        <p
-          className="text"
-          dangerouslySetInnerHTML={{
-            __html: data.wpPage.ACF_HomePage.customTextArea,
-          }}
-        />
+        <div className="inner">
+          <h2 className="header">Kim jesteśmy?</h2>
+          <p
+            className="text"
+            dangerouslySetInnerHTML={{
+              __html: data.wpPage.ACF_HomePage.customTextArea,
+            }}
+          />
+        </div>
       </div>
     </div>
   );

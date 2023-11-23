@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: `Emigowy.pl - Język migowy dla Kultury i Oświaty`,
     description: "Język migowy dla Kultury i Oświaty",
-    siteUrl: `http://emigowy.pl/`,
+    siteUrl: `https://emigowy.zaloguj.net`,
   },
   plugins: [
     {
@@ -39,6 +39,14 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: process.env.WPGRAPHQL_URL,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://emigowy.pl/",
+        sitemap: "https://emigowy.pl/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
   ],

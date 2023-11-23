@@ -16,13 +16,24 @@ import {
   Gallery,
   Cover,
   Embed,
+  ContactForm7,
 } from "../components/GutenbergBlocks";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export const blockRendererComponents = (block) => {
-  console.log(block.name);
-
   switch (block.name) {
+    case "contact-form-7/contact-form-selector": {
+      return (
+        <ContactForm7
+          key={block.id}
+          formId={block.attributes.id}
+          formMarkup={block.attributes.formMarkup
+            .replace('novalidate="novalidate"', "")
+            .split('aria-required="true"')
+            .join('aria-required="true" required')}
+        />
+      );
+    }
     case "tgg/ctabutton": {
       const alignMap = {
         left: "text-left",

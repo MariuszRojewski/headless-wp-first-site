@@ -2,6 +2,7 @@ import React from "react";
 import "./style.scss";
 import { Link } from "gatsby";
 import { nanoid } from "nanoid";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 // Zadania do zrobienia w obszarze tego komponentu.
 // - problemy z ustawieniem koloru na przycisku, czyli elemencie li nie będącym
@@ -45,9 +46,25 @@ const MainMenu = ({ menu, contact }) => {
     }
   }, [isChildActive, menuItems]);
 
-  if (!menuItems.length) {
-    return null;
-  }
+  const handleAddClass = (e) => {
+    const getParentClass = e.target.closest(".parent");
+    getParentClass?.classList.add("mm-active");
+
+    if (getParentClass) {
+      const getSubmenu = getParentClass.querySelector(".submenu");
+      getSubmenu.classList.add("mm-show");
+    }
+  };
+
+  const handleRemoveClass = (e) => {
+    const getParentClass = e.target.closest(".parent");
+    getParentClass?.classList.remove("mm-active");
+
+    if (getParentClass) {
+      const getSubmenu = getParentClass.querySelector(".submenu");
+      getSubmenu.classList.remove("mm-show");
+    }
+  };
 
   if (!menuItems.length) {
     return null;
@@ -62,9 +79,6 @@ const MainMenu = ({ menu, contact }) => {
           const parentItemUrl = menuItem.parentItem.selectPageOrPost?.uri;
           const postOrPageSubMenuItems = menuItem.subMenuItems;
           const selectedCategories = menuItem.selectedCategories;
-
-          console.log("1: ", activeChildForButton);
-          console.log("2: ", parentItemName);
 
           // Sprawdzamy, czy jakiekolwiek dziecko jest aktywne dla tego konkretnego rodzica
           function checkWhatPArentIsActive() {
@@ -109,15 +123,23 @@ const MainMenu = ({ menu, contact }) => {
                         ? "filled-link child-selected"
                         : "filled-link"
                     }
+                    onMouseEnter={handleAddClass}
+                    onMouseLeave={handleRemoveClass}
                   >
                     {parentItemName ? parentItemName : ""}
 
                     {postOrPageSubMenuItems !== null &&
-                      postOrPageSubMenuItems.length !== 0 && <div>&#8964;</div>}
+                      postOrPageSubMenuItems.length !== 0 && (
+                        <IoMdArrowDropdown className="menu-arrow-down" />
+                      )}
                   </Link>
                   {postOrPageSubMenuItems !== null &&
                   postOrPageSubMenuItems.length !== 0 ? (
-                    <ul className="submenu">
+                    <ul
+                      className="submenu"
+                      onMouseEnter={handleAddClass}
+                      onMouseLeave={handleRemoveClass}
+                    >
                       {postOrPageSubMenuItems.map((childItem) => {
                         const childItemPostOrPage = childItem.selectPageOrPost;
 
@@ -151,14 +173,18 @@ const MainMenu = ({ menu, contact }) => {
                 <>
                   <button
                     className={`blank-link ${
-                      activeChildForButton === parentItemName
-                        ? "nav-active"
-                        : ""
+                      isParentActive
+                        ? "filled-link child-selected"
+                        : "filled-link"
                     }`}
+                    onMouseEnter={handleAddClass}
+                    onMouseLeave={handleRemoveClass}
                   >
                     {parentItemName ? parentItemName : ""}
                     {selectedCategories !== null &&
-                      selectedCategories.length !== 0 && <div>&#8964;</div>}
+                      selectedCategories.length !== 0 && (
+                        <IoMdArrowDropdown className="menu-arrow-down" />
+                      )}
                   </button>
 
                   {/* Submenu */}

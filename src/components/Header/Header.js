@@ -1,17 +1,20 @@
 import React from "react";
 import "./style.scss";
 import { Link } from "gatsby";
-import MainMenu from "../MainMenu/MainMenu";
-import useMainMenuQuery from "../../hooks/useMainMenuQuery";
+// import MainMenu from "../MainMenu/MainMenu";
+// import useMainMenuQuery from "../../hooks/useMainMenuQuery";
+import Navigation from "../Navigation/Navigation";
+import useMenuQuery from "../../hooks/useMenuQuery";
 
-import Logo from "../../images/logo-emigowy.png";
+import Logo from "../../images/logo.png";
 // import { Wrapper, Content } from "./Header.styles";
 
 function Header() {
-  // const { site, menu } = useMenuQuery();
-  const { site, wp } = useMainMenuQuery();
-  const menuItems = wp.acfOptionsMainMenu.mainMenu.menuItems;
-  const contactPage = wp.acfOptionsMainMenu.mainMenu.callToActionButton;
+  const { site, menu } = useMenuQuery();
+
+  // const { site, wp } = useMainMenuQuery();
+  // const menuItems = wp.acfOptionsMainMenu.mainMenu.menuItems;
+  // const contactPage = wp.acfOptionsMainMenu.mainMenu.callToActionButton;
 
   return (
     <div>
@@ -20,8 +23,8 @@ function Header() {
           <Link to="/">
             <img src={Logo} alt={site.siteMetadata.title} />
           </Link>
-          {/* <Navigation menu={menu.menuItems.nodes} /> */}
-          <MainMenu menu={menuItems} contact={contactPage} />
+          <Navigation menu={menu.menuItems.nodes} />
+          {/* <MainMenu menu={menuItems} contact={contactPage} /> */}
         </div>
       </div>
     </div>

@@ -9,10 +9,16 @@ $wrapper-background: #fff;
 
   .container {
     height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
 
     img {
       width: 250px;
       margin: 0;
+
+      @media only screen and (max-width: 480px) {
+        width: 180px;
+      }
     }
   }
 }

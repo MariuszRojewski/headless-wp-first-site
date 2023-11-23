@@ -4,42 +4,65 @@
   padding: 70px 0px;
   color: #fff;
 
+  @media (max-width: 1023px) {
+    padding: 0px;
+  }
+
   .container {
     margin: 0 auto;
     padding: 0 20px !important;
 
-    .header {
-      color: black;
-      margin: 0;
-      position: relative; /* Ustawiamy pozycję na relative, aby pseudo-element ::after był pozycjonowany względem tego elementu */
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      &::after {
-        content: ""; /* Dodajemy pustą zawartość */
-        position: absolute; /* Ustawiamy pozycję na absolute, aby element był pozycjonowany absolutnie względem .header */
-        top: 0;
-        right: -40px; /* Możesz dostosować wartość, aby zmienić odległość od prawej krawędzi */
-        bottom: 0;
-        width: 4px; /* Szerokość pionowej kreski */
-        background: black; /* Kolor pionowej kreski */
+      .header {
+        text-align: left;
+        color: black;
+        margin: 0;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: calc(50% - 40px);
+          right: -40px;
+          width: 4px;
+          height: 80px;
+          background: #0f1941;
+
+          @media (max-width: 1023px) {
+            width: 0;
+            height: 0;
+          }
+        }
       }
-    }
 
-    .text {
-      padding-left: 80px;
-      font-size: 1.1em;
-      line-height: 1.4em;
-      text-align: justify;
-      font-weight: 300;
-      margin: 10px 0;
-      color: rgb(46, 35, 70);
-    }
+      .text {
+        padding-left: 80px;
+        font-size: 1.1em;
+        line-height: 1.4em;
+        text-align: justify;
+        font-weight: 300;
+        margin: 10px 0;
+        color: rgb(46, 35, 70);
 
-    @media screen and (min-width: 768px) {
-      padding: 40px 0;
-      text-align: justify;
+        @media (max-width: 1023px) {
+          padding: 0 30px;
+        }
+        @media (max-width: 768px) {
+          padding: 10px;
+        }
+      }
 
-      p {
-        font-size: 1.3rem;
+      @media (max-width: 1023px) {
+        padding: 40px 0;
+        flex-direction: column;
+
+        p {
+          font-size: 1.3rem;
+        }
       }
     }
   }

@@ -8,8 +8,16 @@
       height: auto;
       width: 100%;
 
+      @media screen and (min-width: 1420px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
       @media screen and (min-width: 768px) {
         grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      @media (max-width: 767px) {
+        flex-direction: column;
       }
     }
   }

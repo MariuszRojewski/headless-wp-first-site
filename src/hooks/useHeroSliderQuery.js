@@ -65,26 +65,6 @@ function useHeroSliderQuery() {
               }
             }
           }
-          slider4 {
-            image {
-              gatsbyImage(
-                quality: 50
-                width: 1920
-                placeholder: TRACED_SVG
-                layout: FULL_WIDTH
-              )
-            }
-            title
-            subText
-            button {
-              title
-              destination {
-                url
-                title
-                target
-              }
-            }
-          }
         }
       }
     }

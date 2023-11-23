@@ -10,15 +10,10 @@ function Hero() {
     site,
   } = useHeroQuery();
 
-  console.log("SITE IS HERE! ", site.siteMetadata.title);
-
   const imageData = getImage(data.heroImage.localFile);
-  console.log("THE HERO IMAGE DATA: ", imageData);
   const heroText = data.heroText;
   const heroSubText = data.heroSubText;
   const heroButonDestination = data.heroButonDestination.uri;
-
-  console.log("HERO BUTTON DATA: ", heroButonDestination);
 
   return (
     <Wrapper>

@@ -21,6 +21,70 @@ function useMenuQuery() {
                 label
                 url
                 id
+
+                childItems {
+                  nodes {
+                    label
+                    url
+                    id
+
+                    childItems {
+                      nodes {
+                        label
+                        url
+                        id
+
+                        childItems {
+                          nodes {
+                            label
+                            url
+                            id
+
+                            childItems {
+                              nodes {
+                                label
+                                url
+                                id
+
+                                childItems {
+                                  nodes {
+                                    label
+                                    url
+                                    id
+
+                                    childItems {
+                                      nodes {
+                                        label
+                                        url
+                                        id
+
+                                        childItems {
+                                          nodes {
+                                            label
+                                            url
+                                            id
+
+                                            childItems {
+                                              nodes {
+                                                label
+                                                url
+                                                id
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }

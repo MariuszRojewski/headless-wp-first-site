@@ -8,3 +8,4 @@ export * from "./PersonalCtaButton";
 export * from "./PersonalTickItem";
 export * from "./PersonalCoworkersSlideshow";
 export * from "./Embed";
+export * from "./ContactForm7";

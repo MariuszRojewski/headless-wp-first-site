@@ -1,14 +1,23 @@
 import React from "react";
+
 // Components
 import Layout from "../components/Layout/Layout";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb";
 import PageHero from "../components/PageHero/PageHero";
 import PageSidebar from "../components/PageSidebar/PageSidebar";
+import SidebarMessage from "../components/SidebarMessage/SidebarMessage";
+import Slogans from "../components/Slogans/Slogans";
 // import Accordion from "../components/Accordion/Accordion";
 // import SlideShow from "../components/SlideShow/SlideShow";
 // import Carusel from "../components/SlideShow/Carusel";
+
 // Style
-import { Wrapper, ContentWrapper, PageContent } from "./page.styles";
+import {
+  Wrapper,
+  ContentWrapper,
+  PageContent,
+  BannerWrapper,
+} from "./page.styles";
 // SEO
 import { Seo } from "../components/Seo/Seo";
 // Block rendering
@@ -16,9 +25,10 @@ import { BlockRendererProvider } from "@webdeveducation/wp-block-tools";
 import { blockRendererComponents } from "../config/blockRendererComponents";
 import { Link } from "gatsby";
 
-const PageTemplate = ({ pageContext }) => {
-  console.log("PageTemplate 123: ", pageContext);
+const PageTemplate = (props) => {
+  console.log(props.pageContext);
 
+  const hasSidebar = PageSidebar ? true : false;
   const customInternalLinkComponent = (
     { internalHref, target, rel, className, children, ...rest },
     index
@@ -38,32 +48,45 @@ const PageTemplate = ({ pageContext }) => {
 
   return (
     <Layout>
-      {pageContext.featuredImage ? (
-        <PageHero
-          img={
-            pageContext.featuredImage.node.localFile.childImageSharp
-              .gatsbyImageData
-          }
-        />
+      {props.pageContext.featuredImage ? (
+        <BannerWrapper>
+          <PageHero
+            img={
+              props.pageContext.featuredImage.node.localFile.childImageSharp
+                .gatsbyImageData
+            }
+          />
+          <div className="banner-shadow">
+            <div className="container">
+              <Slogans />
+            </div>
+          </div>
+        </BannerWrapper>
       ) : null}
       <Wrapper>
-        <BreadCrumb crumb={pageContext} />
+        <BreadCrumb crumb={props.pageContext} />
         <ContentWrapper>
-          <PageSidebar sidebar={pageContext} />
-          <PageContent>
-            <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }} />
-            {pageContext.blocks.length !== 0 ? (
+          {/* Sidebar jest wyłączony
+            - rozwiazanie to nie pobiera elementów submenu, trzeba je zaktualizowac */}
+
+          {/* <PageSidebar sidebar={props.pageContext} /> */}
+          <SidebarMessage />
+          <PageContent hasSidebar={hasSidebar}>
+            <h1 dangerouslySetInnerHTML={{ __html: props.pageContext.title }} />
+            {props.pageContext.blocks.length !== 0 ? (
               <BlockRendererProvider
                 customInternalLinkComponent={customInternalLinkComponent}
                 siteDomain={process.env.GATSBY_WP_URL}
-                allBlocks={pageContext.blocks}
+                allBlocks={props.pageContext.blocks}
                 renderComponent={blockRendererComponents}
               />
             ) : (
-              <div dangerouslySetInnerHTML={{ __html: pageContext.content }} />
+              <div
+                dangerouslySetInnerHTML={{ __html: props.pageContext.content }}
+              />
             )}
-            {/* <Carusel slideshowBlocks={pageContext.ACF_SlideshowModule} /> */}
-            {/* <Accordion accordionBlocks={pageContext.ACF_AccordionModule} /> */}
+            {/* <Carusel slideshowBlocks={props.pageContext.ACF_SlideshowModule} /> */}
+            {/* <Accordion accordionBlocks={props.pageContext.ACF_AccordionModule} /> */}
           </PageContent>
         </ContentWrapper>
       </Wrapper>
@@ -73,8 +96,8 @@ const PageTemplate = ({ pageContext }) => {
 
 export default PageTemplate;
 
-export const Head = ({ pageContext }) => {
-  const metaData = pageContext.seo;
+export const Head = (props) => {
+  const metaData = props.pageContext.seo;
 
   return <Seo title={metaData.title} description={metaData.metaDesc} />;
 };

@@ -169,11 +169,6 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-weight: 700;
-  font-size: 2em;
-  margin: 0.67em 0;
-}
 mark {
   background-color: #ff0;
   color: #000;
@@ -335,18 +330,19 @@ a {
 }
 
 p {
-  font-size: 1.1rem;
-  line-height: 1.7rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 800;
   letter-spacing: 1px;
   color: #282828;
   text-transform: uppercase;
-  line-height: 40px;
-  margin-top: 10px;
+  line-height: 30px;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 h2 {
   margin-left: 0;
@@ -360,7 +356,7 @@ h2 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
+  font-size: calc(2.5rem * 1.5); /* np. 3.75rem */
   line-height: 1.1;
 }
 h3 {
@@ -375,16 +371,16 @@ h3 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
+  font-size: calc(2.5rem * 1.5 * 1.5); /* np. 5.625rem */
   line-height: 1.1;
 }
 h4 {
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: calc(2.5rem * 1.5 * 1.5 * 1.5); /* np. 8.4375rem */
   letter-spacing: 1px;
 }
 h5 {
-  font-size: 1rem;
+  font-size: calc(2.5rem * 1.5 * 1.5 * 1.5 * 1.5); /* np. 12.65625rem */
   font-style: normal;
   font-variant: normal;
   font-weight: 200;
@@ -395,7 +391,7 @@ h5 {
 }
 h6 {
   font-family: "Open Sans", sans-serif;
-  font-size: 28px;
+  font-size: calc(2.5rem * 1.5 * 1.5 * 1.5 * 1.5 * 1.5); /* np. 18.984375rem */
   color: #fff;
   margin: 40px 20% 20px 20%;
   line-height: 35px;
@@ -421,6 +417,8 @@ ul {
   margin-bottom: 1.45rem;
   list-style-position: outside;
   list-style-image: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 ol {
   margin-left: 1.45rem;
@@ -433,6 +431,8 @@ ol {
   margin-bottom: 1.45rem;
   list-style-position: outside;
   list-style-image: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 dl {
   margin-left: 0;
@@ -443,6 +443,8 @@ dl {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 dd {
   margin-left: 0;
@@ -453,6 +455,8 @@ dd {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 p {
   margin-left: 0;
@@ -463,6 +467,8 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 figure {
   margin-left: 0;
@@ -500,6 +506,8 @@ table {
   line-height: 1.45rem;
   border-collapse: collapse;
   width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 fieldset {
   margin-left: 0;
@@ -698,11 +706,30 @@ pre tt:after {
 }
 
 .container {
-  width: 1290px;
+  max-width: 1290px;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  padding: 20px; /* Dodaj padding, jeśli chcesz odstęp od krawędzi */
+}
+
+/* Dla mniejszych rozdzielczości */
+@media screen and (max-width: 768px) {
+  .container {
+    justify-content: center;
+  }
+}
+
+/* Dodatkowe reguły dla jeszcze mniejszych rozdzielczości, jeśli to konieczne */
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    /* Dodaj inne odpowiednie style dla mniejszych rozdzielczości */
+  }
 }
 
 @media only screen and (max-width: 480px) {

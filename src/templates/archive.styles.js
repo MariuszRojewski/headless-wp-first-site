@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 export const Wrapper = styled.div`
-  max-width: 1180px;
+  max-width: 1250px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
+
+  @media (max-width: 1440px) {
+    padding: 20px 30px;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -15,8 +19,42 @@ export const ContentWrapper = styled.div`
   }
 `;
 
+export const BannerWrapper = styled.div`
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 300px;
+
+  .banner-shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    background-image: linear-gradient(
+      90deg,
+      rgba(12, 11, 59, 0.6) 0%,
+      rgba(12, 11, 59, 0.45) 50%,
+      rgba(12, 11, 59, 0.3) 100%
+    );
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .styled-image {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+  }
+`;
+
 export const PageContent = styled.article`
   margin: 20px 0 0 0;
+
+  h1 {
+    margin-top: 0px;
+  }
 
   .dot-divider {
     width: 100%;

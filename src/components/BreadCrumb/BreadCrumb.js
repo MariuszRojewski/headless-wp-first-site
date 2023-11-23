@@ -20,6 +20,8 @@ function BreadCrumb({ crumb, forcedCrumb }) {
       ? crumb.allPages.find((node) => node.id === crumb.parentId)
       : null;
 
+    console.log("THE FUCKING CRUMB: ", crumb);
+
     // Breadcrumbsy przygotowane dla Page z Categorią
     if (parentPageData !== null) {
       return (
@@ -40,6 +42,10 @@ function BreadCrumb({ crumb, forcedCrumb }) {
         <Wrapper>
           <Link to="/">
             <span>Home</span>
+          </Link>
+          <span className="divider">/</span>
+          <Link to={crumb.uri}>
+            <span>{crumb.title}</span>
           </Link>
         </Wrapper>
       );

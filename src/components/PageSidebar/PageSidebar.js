@@ -29,6 +29,8 @@ function PageSidebar({ sidebar }) {
             />
           </li>
           {firstParentNodesSort.map((child) => {
+            console.log("CHILD: ", child);
+
             return (
               <li key={child.id}>
                 <Link to={child.uri}>
@@ -48,6 +50,8 @@ function PageSidebar({ sidebar }) {
             <span dangerouslySetInnerHTML={{ __html: pageData.title }} />
           </li>
           {pageDataSort.map((child) => {
+            console.log("CHILD: ", child);
+
             return (
               <li key={child.id}>
                 <Link to={child.uri} activeClassName="sidebar-highlighted">

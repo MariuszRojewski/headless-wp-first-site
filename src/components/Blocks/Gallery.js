@@ -5,7 +5,6 @@ import { Link } from "gatsby";
 import { StyledGatsbyImage } from "./Gallery.styles";
 
 export const Gallery = ({ className, styles, images }, index) => {
-  console.log("########################## GALLERY IMAGES: ", images);
   return (
     <>
       <h2>GALERIA !!!</h2>

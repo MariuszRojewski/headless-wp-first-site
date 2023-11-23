@@ -67,6 +67,12 @@ const HeroSlider = () => {
     initialSlide: 0,
     nextArrow: <MyNextArrow />,
     prevArrow: <MyPrevArrow />,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    lazyLoad: true,
+    infinite: true,
+    pauseOnHover: false,
+    fade: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -109,16 +115,18 @@ const HeroSlider = () => {
               <div key={id} className="slide">
                 <GatsbyImage image={image} alt={title} className="slide-img" />
                 <div className="slide-center">
-                  <h1 className="slide-title">{title}</h1>
-                  <p className="slide-text-area">{introText}</p>
-                  {button && (
-                    <Link
-                      className="slide-button"
-                      href={button.destination.url}
-                    >
-                      {button.title}
-                    </Link>
-                  )}
+                  <div className="inner">
+                    <h1 className="slide-title">{title}</h1>
+                    <p className="slide-text-area">{introText}</p>
+                    {button && (
+                      <Link
+                        className="slide-button"
+                        href={button.destination.url}
+                      >
+                        {button.title}
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
             );

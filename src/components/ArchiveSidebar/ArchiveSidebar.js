@@ -4,7 +4,6 @@ import PageIcon from "../../images/page-icon.svg";
 import { Wrapper, Menu } from "./ArchiveSidebar.styles";
 
 function ArchiveSidebar({ categories }) {
-  console.log("CAT ID: ", categories);
   const sorttedCategories = [...categories].sort((x, y) => {
     if (x.node.slug === "all-posts") return -1;
     if (y.node.slug === "all-posts") return 1;

@@ -13,12 +13,80 @@ export const NavigationWrapper = styled.nav`
   }
 
   @media (min-width: 992px) {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     display: block;
   }
 
   @media (min-width: 1200px) {
     font-size: 1rem;
+  }
+
+  .submenu {
+    z-index: 100;
+
+    li {
+      width: 100%;
+
+      a {
+        width: 100%;
+      }
+    }
+  }
+
+  .level-3,
+  .level-4,
+  .level-5,
+  .level-6,
+  .level-7,
+  .level-8,
+  .level-9,
+  .level-10,
+  .level-11,
+  .level-12,
+  .level-13,
+  .level-14 {
+    right: unset;
+    left: 0;
+  }
+
+  .level-2 {
+    background-color: #fcfcfc;
+  }
+  .level-3 {
+    background-color: #f5f5f5;
+  }
+  .level-4 {
+    background-color: #ebebeb;
+  }
+  .level-5 {
+    background-color: #e1e1e1;
+  }
+  .level-6 {
+    background-color: #d7d7d7;
+  }
+  .level-7 {
+    background-color: #cdcdcd;
+  }
+  .level-8 {
+    background-color: #c3c3c3;
+  }
+  .level-9 {
+    background-color: #b9b9b9;
+  }
+  .level-10 {
+    background-color: #afafaf;
+  }
+  .level-11 {
+    background-color: #a5a5a5;
+  }
+  .level-12 {
+    background-color: #9b9b9b;
+  }
+  .level-13 {
+    background-color: #919191;
+  }
+  .level-14 {
+    background-color: #878787;
   }
 
   ul li {
@@ -61,7 +129,7 @@ export const NavigationWrapper = styled.nav`
     position: absolute;
     right: 0;
     margin: 0;
-    top: 20px;
+    top: 100%;
     text-transform: none;
     background: #fff;
     padding: 15px 10px;
@@ -76,7 +144,11 @@ export const NavigationWrapper = styled.nav`
   ul ul li {
     width: auto;
     min-width: 170px;
-    margin: 5px 0;
+    margin: 2px 0;
+
+    @media (max-width: 1199px) {
+      margin: 0;
+    }
   }
 
   ul ul li a {

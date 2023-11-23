@@ -1,0 +1,52 @@
+.cform-7 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 0;
+  margin-top: -10px;
+  width: 100%;
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    color: #282828;
+  }
+
+  label {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  label,
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+  }
+
+  .wpcf7-submit {
+    padding: 7.5px 20px;
+    background-color: #00aaff;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #008bd1;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+}

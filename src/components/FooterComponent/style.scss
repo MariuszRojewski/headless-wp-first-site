@@ -11,9 +11,10 @@ footer {
   .content {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     width: 100%;
+    padding: 40px 0px;
 
     p {
       font-size: 1rem;
@@ -22,14 +23,24 @@ footer {
       margin: 10px 0;
       color: rgb(46, 35, 70);
     }
+    @media screen and (max-width: 1420px) {
+      padding: 0px 40px;
+    }
 
-    @media screen and (min-width: 768px) {
-      padding: 40px 0;
-      text-align: justify;
+    @media screen and (max-width: 1200px) {
+      padding: 0px 40px;
 
       p {
         font-size: 1.5rem;
       }
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   }
 
@@ -42,7 +53,11 @@ footer {
 
   .single-col {
     text-align: left;
-    max-width: 300px;
+    max-width: 280px;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
 
     .title {
       font-size: 1.2rem;
@@ -63,6 +78,7 @@ footer {
 
       @media (max-width: 768px) {
         margin-bottom: 20px;
+        text-align: center;
       }
     }
 
